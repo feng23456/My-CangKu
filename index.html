@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Upload Your Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f2f4f8;
+    color: #1f2329;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== 整体左右布局 ===== */
+  .page {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    max-width: 1060px;
+    padding: 60px 40px;
+  }
+
+  /* ===== 左侧文案 ===== */
+  .intro { max-width: 420px; }
+  .intro h1 { font-size: 28px; font-weight: 700; }
+  .intro h2 { font-size: 24px; font-weight: 600; margin-top: 4px; }
+  .intro p {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #9aa3ad;
+  }
+  .illustration { margin-top: 40px; width: 360px; display: block; }
+
+  /* ===== 右侧上传卡片 ===== */
+  .card {
+    width: 500px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(31, 35, 41, .06);
+    padding: 32px 48px 40px;
+  }
+  .card h3 { font-size: 18px; font-weight: 600; }
+
+  /* 虚线拖拽区域 */
+  .dropzone {
+    margin-top: 22px;
+    height: 210px;
+    border: 1.5px dashed #cdd8e6;
+    border-radius: 10px;
+    background: #fbfcfe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .dropzone p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #9aa3ad;
+    text-align: center;
+    max-width: 300px;
+  }
+
+  /* 按钮 */
+  .actions { display: flex; gap: 16px; margin-top: 28px; }
+  .btn {
+    flex: 1;
+    padding: 11px 0;
+    font-size: 13px;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .btn-light   { background: #8ab4f5; }
+  .btn-primary { background: #2f7cf6; }
+
+  /* 步骤指示器 */
+  .steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    margin: 34px auto 0;
+  }
+  .steps::before {
+    content: "";
+    position: absolute;
+    left: 6px; right: 6px; top: 50%;
+    height: 2px;
+    transform: translateY(-50%);
+    background: #cfe0f8;
+  }
+  .step {
+    position: relative;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #2f7cf6;
+    box-shadow: 0 0 0 3px #dcebff;
+  }
+</style>
+</head>
+<body>
+
+  <main class="page">
+    <!-- 左侧：标题 + 描述 + 插画 -->
+    <section class="intro">
+      <h1>Finish!</h1>
+      <h2>Upload Your Resume</h2>
+      <p>Upload your resume, the platform will help you parse and optimize, you can also skip this step</p>
+
+      <!-- 占位插画，建议直接从 Figma 导出原图替换 -->
+      <svg class="illustration" viewBox="0 0 400 330" aria-hidden="true">
+        <rect x="70" y="30" width="150" height="80" rx="10" fill="#fff" stroke="#dde3ea" stroke-width="2"/>
+        <circle cx="105" cy="70" r="7" fill="none" stroke="#b6bec9" stroke-width="2.5"/>
+        <circle cx="145" cy="70" r="7" fill="none" stroke="#b6bec9" stroke-width="2.5"/>
+        <circle cx="185" cy="70" r="7" fill="none" stroke="#b6bec9" stroke-width="2.5"/>
+        <rect x="240" y="150" width="125" height="62" rx="9" fill="#3d434a"/>
+        <circle cx="272" cy="181" r="5.5" fill="#fff"/>
+        <circle cx="302" cy="181" r="5.5" fill="#fff"/>
+        <circle cx="332" cy="181" r="5.5" fill="#fff"/>
+        <path d="M255 300 C320 290 330 240 305 225" fill="none" stroke="#3d8bfd" stroke-width="24" stroke-linecap="round"/>
+        <ellipse cx="165" cy="290" rx="95" ry="48" fill="#3d8bfd"/>
+        <circle cx="130" cy="205" r="52" fill="#3d8bfd"/>
+        <path d="M92 178 L78 128 L122 158 Z" fill="#3d8bfd"/>
+        <path d="M168 178 L182 128 L138 158 Z" fill="#3d8bfd"/>
+        <ellipse cx="112" cy="200" rx="11" ry="13" fill="#fff"/>
+        <ellipse cx="150" cy="200" rx="11" ry="13" fill="#fff"/>
+        <circle cx="114" cy="203" r="4.5" fill="#1f2329"/>
+        <circle cx="148" cy="203" r="4.5" fill="#1f2329"/>
+      </svg>
+    </section>
+
+    <!-- 右侧：上传卡片 -->
+    <section class="card">
+      <h3>Upload file</h3>
+
+      <div class="dropzone">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2f7cf6"
+             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 16l-4-4-4 4"/>
+          <path d="M12 12v9"/>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+        </svg>
+        <p>Drag your resume file to this area, or click on the area to select the appropriate file to upload</p>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-light">Last step</button>
+        <button type="button" class="btn btn-primary">Finish</button>
+      </div>
+
+      <div class="steps">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
