@@ -1,0 +1,11 @@
+﻿id,review,true_label,prediction,is_correct
+1,"An absolute masterpiece. The acting, the score, the cinematography - everything is perfect.",正面,正面,True
+2,"I laughed, I cried, and I immediately bought a ticket to see it again.",正面,正面,True
+3,A heartwarming story that the whole family can enjoy. Highly recommended!,正面,正面,True
+4,The best sci-fi film of the decade. The visual effects blew my mind.,正面,正面,True
+5,Brilliant performances from the entire cast. I was glued to the screen.,正面,正面,True
+6,Two hours of my life I will never get back. Utterly boring and predictable.,负面,负面,True
+7,"The plot made no sense, the acting was wooden, and the ending was insulting.",负面,负面,True
+8,I fell asleep twice. Even the popcorn was more entertaining.,负面,负面,True
+9,"Oh fantastic, another three-hour superhero movie about believing in yourself. Exactly what cinema needed.",负面,正面,False
+10,"The visuals are stunning, but the story is a complete disaster.",负面,正面,False
